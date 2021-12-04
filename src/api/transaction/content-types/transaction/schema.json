@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transactions",
+  "info": {
+    "singularName": "transaction",
+    "pluralName": "transactions",
+    "displayName": "Transaction",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "rate_at_transaction": {
+      "type": "decimal",
+      "required": true
+    },
+    "amountSent": {
+      "type": "decimal",
+      "required": true
+    },
+    "to_Guest": {
+      "type": "string"
+    },
+    "Guest": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "from_bankaccounts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::bankaccount.bankaccount",
+      "mappedBy": "transaction_from"
+    },
+    "to_bankaccounts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::bankaccount.bankaccount",
+      "inversedBy": "transactions_to"
+    },
+    "currency": {
+      "type": "component",
+      "repeatable": true,
+      "component": "currency.currency"
+    },
+    "amountReceived": {
+      "type": "decimal"
+    }
+  }
+}

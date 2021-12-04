@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "currency_lists",
+  "info": {
+    "singularName": "currency-list",
+    "pluralName": "currency-lists",
+    "displayName": "currencyList",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "list": {
+      "type": "richtext"
+    }
+  }
+}

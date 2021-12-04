@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bankaccounts",
+  "info": {
+    "singularName": "bankaccount",
+    "pluralName": "bankaccounts",
+    "displayName": "Bankaccount",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "bankaccount": {
+      "type": "string",
+      "required": false,
+      "unique": true
+    },
+    "transaction_from": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::transaction.transaction",
+      "inversedBy": "from_bankaccounts"
+    },
+    "balance": {
+      "type": "decimal",
+      "required": true
+    },
+    "transactions_to": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::transaction.transaction",
+      "mappedBy": "to_bankaccounts"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "balanceTRY": {
+      "type": "decimal"
+    }
+  }
+}

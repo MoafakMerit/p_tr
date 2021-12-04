@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "fees",
+  "info": {
+    "singularName": "fee",
+    "pluralName": "fees",
+    "displayName": "fee",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fee": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
