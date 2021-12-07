@@ -14,24 +14,12 @@
   "attributes": {
     "bankaccount": {
       "type": "string",
-      "required": false,
+      "required": true,
       "unique": true
     },
-    "transaction_from": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::transaction.transaction",
-      "inversedBy": "from_bankaccounts"
-    },
-    "balance": {
+    "balanceDollar": {
       "type": "decimal",
       "required": true
-    },
-    "transactions_to": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::transaction.transaction",
-      "mappedBy": "to_bankaccounts"
     },
     "user": {
       "type": "relation",

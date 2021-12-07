@@ -12,41 +12,24 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "rate_at_transaction": {
+    "amount": {
       "type": "decimal",
       "required": true
-    },
-    "amountSent": {
-      "type": "decimal",
-      "required": true
-    },
-    "to_Guest": {
-      "type": "string"
-    },
-    "Guest": {
-      "type": "boolean",
-      "default": false,
-      "required": true
-    },
-    "from_bankaccounts": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::bankaccount.bankaccount",
-      "mappedBy": "transaction_from"
-    },
-    "to_bankaccounts": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::bankaccount.bankaccount",
-      "inversedBy": "transactions_to"
     },
     "currency": {
-      "type": "component",
-      "repeatable": true,
-      "component": "currency.currency"
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::currency.currency"
     },
-    "amountReceived": {
-      "type": "decimal"
+    "fromBankaccount": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::bankaccount.bankaccount"
+    },
+    "toBankaccount": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::bankaccount.bankaccount"
     }
   }
 }
